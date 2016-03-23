@@ -1,7 +1,8 @@
-﻿import {Component} from 'angular2/core';
+﻿import {Component, Inject} from 'angular2/core';
 import {Hero} from './hero';
 import {HeroDetailComponent} from './hero-detail.component';
 import {HeroService} from './hero.service';
+import {HeroHttpService} from './hero-http.service';
 import {OnInit} from 'angular2/core';
 import { Router } from 'angular2/router';
 

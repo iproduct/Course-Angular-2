@@ -34,13 +34,16 @@
   <ItemGroup>
     <TypeScriptCompile Include="app\app.component.ts" />
     <TypeScriptCompile Include="app\dashboard.component.ts" />
+    <TypeScriptCompile Include="app\hero-mockup.service.ts" />
     <TypeScriptCompile Include="app\heroes.component.ts" />
     <TypeScriptCompile Include="app.ts" />
     <TypeScriptCompile Include="app\hero-detail.component.ts" />
     <TypeScriptCompile Include="app\hero.service.ts" />
     <TypeScriptCompile Include="app\hero.ts" />
+    <TypeScriptCompile Include="app\logger.service.ts" />
     <TypeScriptCompile Include="app\main.ts" />
     <TypeScriptCompile Include="app\mock-heroes.ts" />
+    <TypeScriptCompile Include="app\hero-http.service.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="tsconfig.json" />
