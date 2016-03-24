@@ -1,13 +1,15 @@
 ﻿import { HeroesComponent } from './heroes.component';
 import {HeroDetailComponent} from './hero-detail.component';
 import {DashboardComponent} from './dashboard.component';
+import {ClickMeComponent} from './click-me.component';
+
 export var routerConfig =
 [
   {
     path: '/heroes',
     name: 'Heroes',
-    component: HeroesComponent,
-    useAsDefault: true
+    component: HeroesComponent
+//    useAsDefault: true
   },
   {
     path: '/dashboard',
@@ -20,5 +22,12 @@ export var routerConfig =
     '/detail/:id',
     name: 'HeroDetail',
     component: HeroDetailComponent
+  }, 
+  {
+      path: '/clickme',
+      name: 'ClickMe',
+      component: ClickMeComponent,
+      useAsDefault: true
   }
+
 ];

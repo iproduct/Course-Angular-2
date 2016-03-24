@@ -1,7 +1,7 @@
-System.register(['./heroes.component', './hero-detail.component', './dashboard.component'], function(exports_1, context_1) {
+System.register(['./heroes.component', './hero-detail.component', './dashboard.component', './click-me.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
-    var heroes_component_1, hero_detail_component_1, dashboard_component_1;
+    var heroes_component_1, hero_detail_component_1, dashboard_component_1, click_me_component_1;
     var routerConfig;
     return {
         setters:[
@@ -13,14 +13,16 @@ System.register(['./heroes.component', './hero-detail.component', './dashboard.c
             },
             function (dashboard_component_1_1) {
                 dashboard_component_1 = dashboard_component_1_1;
+            },
+            function (click_me_component_1_1) {
+                click_me_component_1 = click_me_component_1_1;
             }],
         execute: function() {
             exports_1("routerConfig", routerConfig = [
                 {
                     path: '/heroes',
                     name: 'Heroes',
-                    component: heroes_component_1.HeroesComponent,
-                    useAsDefault: true
+                    component: heroes_component_1.HeroesComponent
                 },
                 {
                     path: '/dashboard',
@@ -31,6 +33,12 @@ System.register(['./heroes.component', './hero-detail.component', './dashboard.c
                     path: '/detail/:id',
                     name: 'HeroDetail',
                     component: hero_detail_component_1.HeroDetailComponent
+                },
+                {
+                    path: '/clickme',
+                    name: 'ClickMe',
+                    component: click_me_component_1.ClickMeComponent,
+                    useAsDefault: true
                 }
             ]);
         }
