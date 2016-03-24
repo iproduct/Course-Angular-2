@@ -26,6 +26,8 @@
     <Content Include="app\dashboard.component.html" />
     <Content Include="app\hero-detail.component.css" />
     <Content Include="app\hero-detail.component.html" />
+    <Content Include="app\heroes.component.css" />
+    <Content Include="app\heroes.component.html" />
     <Content Include="styles.css" />
     <Content Include="app\app.css" />
     <Content Include="index.html" />
@@ -33,6 +35,7 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app\app.component.ts" />
+    <TypeScriptCompile Include="app\click-me.component.ts" />
     <TypeScriptCompile Include="app\dashboard.component.ts" />
     <TypeScriptCompile Include="app\hero-data.ts" />
     <TypeScriptCompile Include="app\hero-mockup.service.ts" />

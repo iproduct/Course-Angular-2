@@ -11,24 +11,56 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var ClickMeComponent;
+    var LoopbackComponent, KeyUpComponent, ClickMeComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
+            LoopbackComponent = (function () {
+                function LoopbackComponent() {
+                }
+                LoopbackComponent = __decorate([
+                    core_1.Component({
+                        selector: 'loop-back',
+                        template: "\n    <input #box (keyup)=\"null\">\n    <p>{{box.value}}</p>\n  "
+                    }), 
+                    __metadata('design:paramtypes', [])
+                ], LoopbackComponent);
+                return LoopbackComponent;
+            }());
+            exports_1("LoopbackComponent", LoopbackComponent);
+            KeyUpComponent = (function () {
+                function KeyUpComponent() {
+                    this.values = '';
+                }
+                KeyUpComponent.prototype.addHero = function (name) {
+                    this.values += name + ' | ';
+                };
+                KeyUpComponent = __decorate([
+                    core_1.Component({
+                        selector: 'key-up',
+                        template: "\n    <input #newHero (keyup.enter)=\"values=newHero.value\"\n                (blur)=\"addHero(newHero.value); newHero.value='' \">\n    <p>{{values}}</p>\n  "
+                    }), 
+                    __metadata('design:paramtypes', [])
+                ], KeyUpComponent);
+                return KeyUpComponent;
+            }());
+            exports_1("KeyUpComponent", KeyUpComponent);
             ClickMeComponent = (function () {
                 function ClickMeComponent() {
-                    this.clickMessage = '';
+                    this.values = '';
                 }
-                ClickMeComponent.prototype.onClickMe = function () {
-                    this.clickMessage = 'You are my hero!';
+                // without strong typing
+                ClickMeComponent.prototype.onKey = function (event) {
+                    this.values += event.target.value + ' | ';
                 };
                 ClickMeComponent = __decorate([
                     core_1.Component({
                         selector: 'click-me',
-                        template: "\n    <button (click)=\"onClickMe()\">Click me!</button>\n    {{clickMessage}}"
+                        directives: [KeyUpComponent],
+                        template: "\n    <input (keyup)=\"onKey($event)\">\n    <p>{{values }}</p>\n    <div><key-up></key-up></div>\n"
                     }), 
                     __metadata('design:paramtypes', [])
                 ], ClickMeComponent);

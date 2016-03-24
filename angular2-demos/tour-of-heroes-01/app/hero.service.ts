@@ -1,7 +1,10 @@
 ﻿import {Hero} from './hero';
 
 
-export class HeroService {
-    getHeroes(): Promise<Hero[]> { return null;};
-    getHero(id: number): Promise<Hero> { return null;};
+export abstract class HeroService {
+    abstract getHeroes(): Promise<Hero[]>;
+    abstract getHero(id: number): Promise<Hero>;
+    abstract addHero(name: string): Promise<Hero>;
+    abstract editHero(hero: Hero): Promise<void>;
+
 }

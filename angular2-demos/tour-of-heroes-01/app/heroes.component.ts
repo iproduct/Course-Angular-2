@@ -15,13 +15,24 @@ import { Router } from 'angular2/router';
 export class HeroesComponent implements OnInit {
     public selectedHero: Hero;
     public heroes: Hero[];
+    errorMessage: string;
     constructor(private _router: Router, private _heroService: HeroService) { }
     ngOnInit() {
         this.getHeroes();
     }
     onSelect(hero: Hero) { this.selectedHero = hero; }
     getHeroes() {
-        this._heroService.getHeroes().then((heroes) => this.heroes = heroes);
+        this._heroService.getHeroes().then(
+            heroes => this.heroes = heroes,
+            error => this.errorMessage = <any>error
+        );
+    }
+    addHero(name: string) {
+        if (!name) { return; }
+        this._heroService.addHero(name).then(
+            hero => this.heroes.push(hero),
+            error => this.errorMessage = <any>error
+        );
     }
     gotoDetail() {
         let link = ['HeroDetail', { id: this.selectedHero.id }];

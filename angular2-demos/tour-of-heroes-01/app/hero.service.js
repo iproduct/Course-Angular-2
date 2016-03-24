@@ -8,10 +8,6 @@ System.register([], function(exports_1, context_1) {
             HeroService = (function () {
                 function HeroService() {
                 }
-                HeroService.prototype.getHeroes = function () { return null; };
-                ;
-                HeroService.prototype.getHero = function (id) { return null; };
-                ;
                 return HeroService;
             }());
             exports_1("HeroService", HeroService);

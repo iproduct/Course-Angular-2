@@ -38,7 +38,14 @@ System.register(['angular2/core', './hero-detail.component', './hero.service', '
                 HeroesComponent.prototype.onSelect = function (hero) { this.selectedHero = hero; };
                 HeroesComponent.prototype.getHeroes = function () {
                     var _this = this;
-                    this._heroService.getHeroes().then(function (heroes) { return _this.heroes = heroes; });
+                    this._heroService.getHeroes().then(function (heroes) { return _this.heroes = heroes; }, function (error) { return _this.errorMessage = error; });
+                };
+                HeroesComponent.prototype.addHero = function (name) {
+                    var _this = this;
+                    if (!name) {
+                        return;
+                    }
+                    this._heroService.addHero(name).then(function (hero) { return _this.heroes.push(hero); }, function (error) { return _this.errorMessage = error; });
                 };
                 HeroesComponent.prototype.gotoDetail = function () {
                     var link = ['HeroDetail', { id: this.selectedHero.id }];
