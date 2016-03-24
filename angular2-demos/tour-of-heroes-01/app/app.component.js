@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './hero-http.service', './hero.service', './router-config', './logger.service', 'angular2/http'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', './hero-http.service', './hero.service', './router-config', './logger.service', 'angular2/http', 'a2-in-memory-web-api/core', './hero-data'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', './hero-http.service', './h
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, hero_http_service_1, hero_service_1, router_config_1, logger_service_1, http_1;
+    var core_1, router_1, hero_http_service_1, hero_service_1, router_config_1, logger_service_1, http_1, core_2, hero_data_1;
     var AppComponent;
     return {
         setters:[
@@ -34,6 +34,12 @@ System.register(['angular2/core', 'angular2/router', './hero-http.service', './h
             },
             function (http_1_1) {
                 http_1 = http_1_1;
+            },
+            function (core_2_1) {
+                core_2 = core_2_1;
+            },
+            function (hero_data_1_1) {
+                hero_data_1 = hero_data_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -46,6 +52,9 @@ System.register(['angular2/core', 'angular2/router', './hero-http.service', './h
                         template: "\n    <h1>{{title}}</h1>\n    <nav>\n        <a [routerLink]=\"['Dashboard']\">Dashboard</a>\n        <a [routerLink]=\"['Heroes']\">Heroes</a>\n    </nav>\n    <router-outlet></router-outlet>\n  ",
                         directives: [router_1.ROUTER_DIRECTIVES],
                         providers: [router_1.ROUTER_PROVIDERS, http_1.HTTP_PROVIDERS,
+                            // in-memory web api providers
+                            core_1.provide(http_1.XHRBackend, { useClass: core_2.InMemoryBackendService }),
+                            core_1.provide(core_2.SEED_DATA, { useClass: hero_data_1.HeroData }),
                             core_1.provide(hero_service_1.HeroService, { useClass: hero_http_service_1.HeroHttpService }), logger_service_1.LoggerService]
                     }),
                     router_1.RouteConfig(router_config_1.routerConfig), 

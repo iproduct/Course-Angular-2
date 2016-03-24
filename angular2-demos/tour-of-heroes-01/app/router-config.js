@@ -19,12 +19,13 @@ System.register(['./heroes.component', './hero-detail.component', './dashboard.c
                 {
                     path: '/heroes',
                     name: 'Heroes',
-                    component: heroes_component_1.HeroesComponent
+                    component: heroes_component_1.HeroesComponent,
+                    useAsDefault: true
                 },
                 {
                     path: '/dashboard',
                     name: 'Dashboard',
-                    component: dashboard_component_1.DashboardComponent
+                    component: dashboard_component_1.DashboardComponent,
                 },
                 {
                     path: '/detail/:id',

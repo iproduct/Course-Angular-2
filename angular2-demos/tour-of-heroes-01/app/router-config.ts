@@ -6,12 +6,14 @@ export var routerConfig =
   {
     path: '/heroes',
     name: 'Heroes',
-    component: HeroesComponent
+    component: HeroesComponent,
+    useAsDefault: true
   },
   {
     path: '/dashboard',
     name: 'Dashboard',
-    component: DashboardComponent
+    component: DashboardComponent,
+
   },
   {
     path:

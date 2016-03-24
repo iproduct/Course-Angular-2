@@ -8,7 +8,11 @@ import {HeroDetailComponent} from './hero-detail.component';
 import {DashboardComponent} from './dashboard.component';
 import {routerConfig} from './router-config';
 import {LoggerService} from './logger.service';
-import {HTTP_PROVIDERS}    from 'angular2/http';
+import {HTTP_PROVIDERS, XHRBackend}    from 'angular2/http';
+// in-memory web api imports
+import {InMemoryBackendService, SEED_DATA}
+                from 'a2-in-memory-web-api/core';
+import {HeroData} from './hero-data';
 
 
 @Component({
@@ -23,6 +27,9 @@ import {HTTP_PROVIDERS}    from 'angular2/http';
   `,
     directives: [ROUTER_DIRECTIVES],
     providers: [ROUTER_PROVIDERS, HTTP_PROVIDERS,
+        // in-memory web api providers
+        provide(XHRBackend, { useClass: InMemoryBackendService }), // in-mem server
+        provide(SEED_DATA, { useClass: HeroData }), // in-mem server data
         provide(HeroService, { useClass: HeroHttpService }), LoggerService]
 })
 @RouteConfig(routerConfig)

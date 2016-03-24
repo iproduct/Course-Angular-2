@@ -17,6 +17,7 @@
     <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
     <script src="node_modules/angular2/bundles/router.dev.js"></script>
     <script src="node_modules/angular2/bundles/http.dev.js"></script>
+    <script src="node_modules/a2-in-memory-web-api/web-api.js"></script>
 
     <!-- 2. Configure SystemJS -->
     <script>
@@ -37,11 +38,11 @@
 <body>
     <my-app>Loading...</my-app>
 
-
+<!--
 <p id="demo">Let AJAX change this text.</p>
 
 <button type="button"
-onclick="loadDoc('http://localhost:8080/ipt_polling/app/polls/', myFunction)">Change Content
+onclick="loadDoc('http://10.1.1.183:8080/ipt_polling/app/polls/', myFunction)">Change Content
 </button>
 
 <script>
@@ -61,7 +62,7 @@ function myFunction(xhttp) {
   document.getElementById("demo").innerHTML = xhttp.responseText;
 }
     </script>
-
+    -->
 
 <!--<button>Hello, world!</button>
 <script>

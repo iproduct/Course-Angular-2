@@ -34,6 +34,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="app\app.component.ts" />
     <TypeScriptCompile Include="app\dashboard.component.ts" />
+    <TypeScriptCompile Include="app\hero-data.ts" />
     <TypeScriptCompile Include="app\hero-mockup.service.ts" />
     <TypeScriptCompile Include="app\heroes.component.ts" />
     <TypeScriptCompile Include="app.ts" />
@@ -50,6 +51,7 @@
     <Content Include="typings.json" />
     <Content Include="package.json" />
     <TypeScriptCompile Include="app\router-config.ts" />
+    <Content Include="app\heroes.json" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
