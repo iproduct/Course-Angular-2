@@ -2,6 +2,8 @@
 import {HeroDetailComponent} from './hero-detail.component';
 import {DashboardComponent} from './dashboard.component';
 import {ClickMeComponent} from './click-me.component';
+import {WikiComponent} from './wiki/wiki.component';
+import {HeroFormComponent} from './hero-form.component';
 
 export var routerConfig =
 [
@@ -27,6 +29,16 @@ export var routerConfig =
       path: '/clickme',
       name: 'ClickMe',
       component: ClickMeComponent,
+  },
+  {
+      path: '/wiki/wiki',
+      name: 'Wiki',
+      component: WikiComponent,
+  },
+  {
+      path: '/heroes/new',
+      name: 'HeroForm',
+      component: HeroFormComponent,
       useAsDefault: true
   }
 

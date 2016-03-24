@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './hero.service'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', './hero.service', './hero'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', './hero.service'], function
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, hero_service_1;
+    var core_1, router_1, hero_service_1, hero_1;
     var HeroDetailComponent;
     return {
         setters:[
@@ -22,12 +22,22 @@ System.register(['angular2/core', 'angular2/router', './hero.service'], function
             },
             function (hero_service_1_1) {
                 hero_service_1 = hero_service_1_1;
+            },
+            function (hero_1_1) {
+                hero_1 = hero_1_1;
             }],
         execute: function() {
             HeroDetailComponent = (function () {
                 function HeroDetailComponent(_heroService, _routeParams) {
                     this._heroService = _heroService;
                     this._routeParams = _routeParams;
+                    this.model = new hero_1.Hero(18, 'Dr IQ', this.powers[0], 'Chuck Overstreet');
+                    this.submitted = false;
+                    // Reset the form with a new hero AND restore 'pristine' class state
+                    // by toggling 'active' flag which causes the form
+                    // to be removed/re-added in a tick via NgIf
+                    // TODO: Workaround until NgForm has a reset method (#6822)
+                    this.active = true;
                 }
                 HeroDetailComponent.prototype.ngOnInit = function () {
                     var _this = this;
@@ -37,6 +47,13 @@ System.register(['angular2/core', 'angular2/router', './hero.service'], function
                 };
                 HeroDetailComponent.prototype.goBack = function () {
                     window.history.back();
+                };
+                HeroDetailComponent.prototype.onSubmit = function () { this.submitted = true; };
+                HeroDetailComponent.prototype.newHero = function () {
+                    var _this = this;
+                    this.model = new hero_1.Hero(42, '', '');
+                    this.active = false;
+                    setTimeout(function () { return _this.active = true; }, 0);
                 };
                 HeroDetailComponent = __decorate([
                     core_1.Component({

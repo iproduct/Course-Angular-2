@@ -49,7 +49,7 @@ System.register(['angular2/core', 'angular2/router', './hero-http.service', './h
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n    <h1>{{title}}</h1>\n    <nav>\n        <a [routerLink]=\"['Dashboard']\">Dashboard</a>\n        <a [routerLink]=\"['Heroes']\">Heroes</a>\n    </nav>\n    <router-outlet></router-outlet>\n  ",
+                        template: "\n    <h1>{{title}}</h1>\n    <nav>\n        <a [routerLink]=\"['Dashboard']\">Dashboard</a>\n        <a [routerLink]=\"['Heroes']\">Heroes</a>\n        <a [routerLink]=\"['HeroForm']\">Add Hero</a>\n    </nav>\n    <router-outlet></router-outlet>\n  ",
                         directives: [router_1.ROUTER_DIRECTIVES],
                         providers: [router_1.ROUTER_PROVIDERS, http_1.HTTP_PROVIDERS,
                             // in-memory web api providers

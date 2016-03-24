@@ -1,7 +1,7 @@
-System.register(['./heroes.component', './hero-detail.component', './dashboard.component', './click-me.component'], function(exports_1, context_1) {
+System.register(['./heroes.component', './hero-detail.component', './dashboard.component', './click-me.component', './wiki/wiki.component', './hero-form.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
-    var heroes_component_1, hero_detail_component_1, dashboard_component_1, click_me_component_1;
+    var heroes_component_1, hero_detail_component_1, dashboard_component_1, click_me_component_1, wiki_component_1, hero_form_component_1;
     var routerConfig;
     return {
         setters:[
@@ -16,6 +16,12 @@ System.register(['./heroes.component', './hero-detail.component', './dashboard.c
             },
             function (click_me_component_1_1) {
                 click_me_component_1 = click_me_component_1_1;
+            },
+            function (wiki_component_1_1) {
+                wiki_component_1 = wiki_component_1_1;
+            },
+            function (hero_form_component_1_1) {
+                hero_form_component_1 = hero_form_component_1_1;
             }],
         execute: function() {
             exports_1("routerConfig", routerConfig = [
@@ -38,6 +44,16 @@ System.register(['./heroes.component', './hero-detail.component', './dashboard.c
                     path: '/clickme',
                     name: 'ClickMe',
                     component: click_me_component_1.ClickMeComponent,
+                },
+                {
+                    path: '/wiki/wiki',
+                    name: 'Wiki',
+                    component: wiki_component_1.WikiComponent,
+                },
+                {
+                    path: '/heroes/new',
+                    name: 'HeroForm',
+                    component: hero_form_component_1.HeroFormComponent,
                     useAsDefault: true
                 }
             ]);

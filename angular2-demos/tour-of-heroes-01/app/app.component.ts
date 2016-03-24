@@ -22,6 +22,7 @@ import {HeroData} from './hero-data';
     <nav>
         <a [routerLink]="['Dashboard']">Dashboard</a>
         <a [routerLink]="['Heroes']">Heroes</a>
+        <a [routerLink]="['HeroForm']">Add Hero</a>
     </nav>
     <router-outlet></router-outlet>
   `,
