@@ -29,8 +29,12 @@
                 app: {
                     format: 'register',
                     defaultExtension: 'js'
+                },
+                shared: {
+                    format: 'register',
+                    defaultExtension: 'js'
                 }
-            }
+        }
         });
         System.import('app/main')
               .then(null, console.error.bind(console));
@@ -40,6 +44,20 @@
 <!-- 3. Display the application -->
 <body>
     <my-app>Loading...</my-app>
+
+    <script>
+        var myZoneSpec = {
+        beforeTask: function () {
+        console.log('Before task');
+        },
+        afterTask: function () {
+        console.log('After task');
+        }
+        };
+
+        var myZone = zone.fork(myZoneSpec);
+        myZone.run(main);
+    </script>
 
 <!--
 <p id="demo">Let AJAX change this text.</p>

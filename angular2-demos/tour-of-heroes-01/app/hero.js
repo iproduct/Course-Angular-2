@@ -6,9 +6,10 @@ System.register([], function(exports_1, context_1) {
         setters:[],
         execute: function() {
             Hero = (function () {
-                function Hero(id, name, power, alterEgo) {
+                function Hero(id, name, email, power, alterEgo) {
                     this.id = id;
                     this.name = name;
+                    this.email = email;
                     this.power = power;
                     this.alterEgo = alterEgo;
                 }

@@ -31,7 +31,7 @@ System.register(['angular2/core', 'angular2/router', './hero.service', './hero']
                 function HeroDetailComponent(_heroService, _routeParams) {
                     this._heroService = _heroService;
                     this._routeParams = _routeParams;
-                    this.model = new hero_1.Hero(18, 'Dr IQ', this.powers[0], 'Chuck Overstreet');
+                    this.model = new hero_1.Hero(18, 'Dr IQ', 'superstorng', 'Chuck Overstreet');
                     this.submitted = false;
                     // Reset the form with a new hero AND restore 'pristine' class state
                     // by toggling 'active' flag which causes the form
@@ -48,7 +48,10 @@ System.register(['angular2/core', 'angular2/router', './hero.service', './hero']
                 HeroDetailComponent.prototype.goBack = function () {
                     window.history.back();
                 };
-                HeroDetailComponent.prototype.onSubmit = function () { this.submitted = true; };
+                HeroDetailComponent.prototype.onSubmit = function () {
+                    this._heroService.editHero(this.hero);
+                    this.submitted = true;
+                };
                 HeroDetailComponent.prototype.newHero = function () {
                     var _this = this;
                     this.model = new hero_1.Hero(42, '', '');
@@ -59,7 +62,7 @@ System.register(['angular2/core', 'angular2/router', './hero.service', './hero']
                     core_1.Component({
                         selector: 'my-hero-detail',
                         inputs: ['hero'],
-                        template: "\n  <div *ngIf=\"hero\">\n    <h2>{{hero.name}} details!</h2>\n    <div><label>id: </label>{{hero.id}}</div>\n    <div>\n      <label>name: </label>\n      <input [(ngModel)]=\"hero.name\" placeholder=\"name\"/>\n    </div>\n     <button (click)=\"goBack()\">Back</button>\n  </div>\n"
+                        template: "\n  <div *ngIf=\"hero\">\n    <h2>{{hero.name}} details!</h2>\n    <div><label>id: </label>{{hero.id}}</div>\n    <div>\n      <label>name: </label>\n      <input [(ngModel)]=\"hero.name\" placeholder=\"name\" (blur)='onSubmit()'/>\n    </div>\n     <button (click)=\"goBack()\">Back</button>\n  </div>\n"
                     }), 
                     __metadata('design:paramtypes', [hero_service_1.HeroService, router_1.RouteParams])
                 ], HeroDetailComponent);

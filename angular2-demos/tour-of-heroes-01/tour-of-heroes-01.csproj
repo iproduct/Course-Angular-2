@@ -47,12 +47,27 @@
     <TypeScriptCompile Include="app\hero-detail.component.ts" />
     <TypeScriptCompile Include="app\hero.service.ts" />
     <TypeScriptCompile Include="app\hero.ts" />
+    <TypeScriptCompile Include="app\interaction\astronaut.component.ts" />
+    <TypeScriptCompile Include="app\interaction\hero-child.component.ts" />
+    <TypeScriptCompile Include="app\interaction\hero-master.component.ts" />
+    <TypeScriptCompile Include="app\interaction\mission-control.component.ts" />
+    <TypeScriptCompile Include="app\interaction\mission.service.ts" />
+    <TypeScriptCompile Include="app\interaction\version-child.component.ts" />
+    <TypeScriptCompile Include="app\interaction\version-parent.component.ts" />
+    <TypeScriptCompile Include="app\interaction\vote-taker.componet.ts" />
+    <TypeScriptCompile Include="app\interaction\voter.component.ts" />
     <TypeScriptCompile Include="app\logger.service.ts" />
     <TypeScriptCompile Include="app\main.ts" />
     <TypeScriptCompile Include="app\mock-heroes.ts" />
     <TypeScriptCompile Include="app\hero-http.service.ts" />
+    <TypeScriptCompile Include="app\pipes\hero-async-message.component.ts" />
     <TypeScriptCompile Include="app\wiki\wiki.component.ts" />
     <TypeScriptCompile Include="app\wiki\wikipedia.service.ts" />
+    <TypeScriptCompile Include="shared\directives\email-validator.directive.ts" />
+    <TypeScriptCompile Include="shared\directives\tooltip.directive.ts" />
+    <TypeScriptCompile Include="shared\directives\log-on-click.directive.ts" />
+    <TypeScriptCompile Include="shared\Pipes\exponential-strength.pipe.ts" />
+    <TypeScriptCompile Include="shared\Validators\username.validator.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="tsconfig.json" />

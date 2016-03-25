@@ -1,7 +1,7 @@
 ﻿<div class="container">
     <div [hidden]="submitted">
-        <h1>Hero Form</h1>
-        <form *ngIf="active" (ngSubmit)="onSubmit()" #heroForm="ngForm">
+        <h1 myLogOnClick>Hero Form</h1>
+        <form *ngIf="active" (ngSubmit)="onSubmit()" #heroForm="ngForm" novalidate>
             <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" class="form-control" required
@@ -18,6 +18,14 @@
                        ngControl="alterEgo">
             </div>
             <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" ngControl="email" validateEmail class="form-control" 
+                       [(ngModel)]="model.email"
+                       #name="ngForm">
+                <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                   Valid email is required.
+                </div>
+            </div><div class="form-group">
                 <label for="power">Hero Power</label>
                 <select class="form-control" required
                         [(ngModel)]="model.power"

@@ -1,9 +1,13 @@
 ﻿import {Component} from 'angular2/core';
 import {NgForm}    from 'angular2/common';
 import { Hero }    from './hero';
+import { LogOnClickDirective } from '../shared/directives/log-on-click.directive';
+import { TooltipDirective } from '../shared/directives/tooltip.directive';
+import { EmailValidator } from '../shared/directives/email-validator.directive';
 
 @Component({
     selector: 'hero-form',
+    directives: [LogOnClickDirective, EmailValidator],
     templateUrl: 'app/hero-form.component.html'
 })
 export class HeroFormComponent {
