@@ -1,0 +1,58 @@
+.demo-root {
+  font-family: 'Calibri', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+  // Helps fonts on OSX looks more consistent with other systems
+  // Isn't currently in button styles due to performance concerns
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  md-sidenav {
+    min-width: 15%;
+
+    [md-button] {
+      width: 100%;
+      position: relative;
+      bottom: 0;
+      margin: 24px 0;
+    }
+  }
+
+  .demo-content {
+    padding: 32px;
+  }
+
+  md-toolbar {
+    md-icon {
+      cursor: pointer;
+    }
+
+    .demo-toolbar {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+    
+    div {
+     width:60%;
+    }
+  }
+
+  h1 {
+    font-size: 20px;
+    margin-bottom: 0;
+  }
+  
+  h2 {
+    margin-top: 3px;
+    font-size: 14px;
+  }
+  
+  #logo {
+    padding-top: 5px;
+    width: 90px;
+    height: 57px;
+    vertical-align: middle;
+  }
+}

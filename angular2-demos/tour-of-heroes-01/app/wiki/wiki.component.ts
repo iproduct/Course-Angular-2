@@ -7,7 +7,7 @@ import {WikipediaService} from './wikipedia.service';
     selector: 'my-wiki',
     styles: [`
     .demo {
-      margin: 30px;
+      padding: 30px;
     }
     `],
     template: `
