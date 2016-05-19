@@ -17,7 +17,20 @@ import {HeroData} from './hero-data';
 
 @Component({
     selector: 'my-app',
+    styles: [`
+    .container {
+      padding: 30px;
+    }
+    nav a {
+        display: inline-block;
+        background-color: #ddd;
+        padding: 4px;
+        margin: 4px;
+        border-radius: 5px;
+    } 
+    `],
     template: `
+    <div class="container">
     <h1>{{title}}</h1>
     <nav>
         <a [routerLink]="['Dashboard']">Dashboard</a>
@@ -26,6 +39,7 @@ import {HeroData} from './hero-data';
         <a [routerLink]="['HeroMaster']">Hero Master</a>
     </nav>
     <router-outlet></router-outlet>
+    </div>
   `,
     directives: [ROUTER_DIRECTIVES],
     providers: [ROUTER_PROVIDERS, HTTP_PROVIDERS,

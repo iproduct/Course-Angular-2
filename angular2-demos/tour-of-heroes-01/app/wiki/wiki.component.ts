@@ -5,13 +5,20 @@ import {WikipediaService} from './wikipedia.service';
 
 @Component({
     selector: 'my-wiki',
+    styles: [`
+    .demo {
+      margin: 30px;
+    }
+    `],
     template: `
+    <div class="demo">
     <h1>Wikipedia Demo</h1>
     <p><i>Fetches after each keystroke</i></p>
     <input #term (keyup)="search(term.value)"/>
     <ul>
       <li *ngFor="#item of items | async">{{item}}</li>
     </ul>
+    </div>
   `,
     providers: [JSONP_PROVIDERS, WikipediaService]
 })

@@ -49,7 +49,8 @@ System.register(['angular2/core', 'angular2/router', './hero-http.service', './h
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n    <h1>{{title}}</h1>\n    <nav>\n        <a [routerLink]=\"['Dashboard']\">Dashboard</a>\n        <a [routerLink]=\"['Heroes']\">Heroes</a>\n        <a [routerLink]=\"['HeroForm']\">Add Hero</a>\n        <a [routerLink]=\"['HeroMaster']\">Hero Master</a>\n    </nav>\n    <router-outlet></router-outlet>\n  ",
+                        styles: ["\n    .container {\n      padding: 30px;\n    }\n    nav a {\n        display: inline-block;\n        background-color: #ddd;\n        padding: 4px;\n        margin: 4px;\n        border-radius: 5px;\n    } \n    "],
+                        template: "\n    <div class=\"container\">\n    <h1>{{title}}</h1>\n    <nav>\n        <a [routerLink]=\"['Dashboard']\">Dashboard</a>\n        <a [routerLink]=\"['Heroes']\">Heroes</a>\n        <a [routerLink]=\"['HeroForm']\">Add Hero</a>\n        <a [routerLink]=\"['HeroMaster']\">Hero Master</a>\n    </nav>\n    <router-outlet></router-outlet>\n    </div>\n  ",
                         directives: [router_1.ROUTER_DIRECTIVES],
                         providers: [router_1.ROUTER_PROVIDERS, http_1.HTTP_PROVIDERS,
                             // in-memory web api providers

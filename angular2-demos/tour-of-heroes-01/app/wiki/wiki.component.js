@@ -41,7 +41,8 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Rx', './wikipedia.servi
                 WikiComponent = __decorate([
                     core_1.Component({
                         selector: 'my-wiki',
-                        template: "\n    <h1>Wikipedia Demo</h1>\n    <p><i>Fetches after each keystroke</i></p>\n    <input #term (keyup)=\"search(term.value)\"/>\n    <ul>\n      <li *ngFor=\"#item of items | async\">{{item}}</li>\n    </ul>\n  ",
+                        styles: ["\n    .demo {\n      margin: 30px;\n    }\n    "],
+                        template: "\n    <div class=\"demo\">\n    <h1>Wikipedia Demo</h1>\n    <p><i>Fetches after each keystroke</i></p>\n    <input #term (keyup)=\"search(term.value)\"/>\n    <ul>\n      <li *ngFor=\"#item of items | async\">{{item}}</li>\n    </ul>\n    </div>\n  ",
                         providers: [http_1.JSONP_PROVIDERS, wikipedia_service_1.WikipediaService]
                     }), 
                     __metadata('design:paramtypes', [wikipedia_service_1.WikipediaService])
